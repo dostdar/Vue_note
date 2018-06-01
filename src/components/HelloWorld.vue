@@ -1,7 +1,6 @@
 <template>
   <div>
 <khi />
-<dir />
   </div>
 </template>
 

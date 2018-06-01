@@ -1,6 +1,8 @@
 <template>
 <div>
-<li v-for="(name,key) in names" v-bind:key="key">{{name}} </li>
+<li v-for="(name , cond) in names" v-bind:key="cond" v-on:click="name.cond = !name.cond" >
+    <div v-if="name.cond">  {{name.name}} </div>
+</li>
 </div>
 </template>
 
@@ -8,15 +10,23 @@
 export default {
     data () {
         return {
-            names : ["so" ,"di" , "ri"] ,
+            names : [
+                {cond:true , name : "is"},
+                {cond:true , name : "isa"},
+                {cond:true , name : "isan"},
+            ] ,
         }
     }
 }
 </script>
 
 <style scoped>
-li {
-    display: inline;
+div {
+    background-color: brown;
+    display: block;
+    width: 100px;
+    margin: 20px;
+    height: 40px;
 }
 </style>
 
